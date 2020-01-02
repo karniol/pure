@@ -4,7 +4,7 @@ set --global pure_version 3.5.0 # used for bug report
 _pure_set_default pure_color_primary blue
 _pure_set_default pure_color_info cyan
 _pure_set_default pure_color_mute brblack
-_pure_set_default pure_color_success magenta
+_pure_set_default pure_color_success normal
 _pure_set_default pure_color_normal normal
 _pure_set_default pure_color_danger red
 _pure_set_default pure_color_light white
