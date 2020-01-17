@@ -6,12 +6,13 @@ function _pure_prompt_node_dirty
     set --local node_dirty_color
 
     set --local nvmrc "$project_root/.nvmrc"
+    set --local nvmrc_version
     if not test -e "$nvmrc"
         # no `.nvmrc`: anything goes
         set node_version_ok 1
     else
         # node version in `.nvmrc`
-        set --local nvmrc_version (head -n 1 "$nvmrc" | sed "s/^v//g")
+        set nvmrc_version (head -n 1 "$nvmrc" | sed "s/^v//g")
     end
 
     # current node version
