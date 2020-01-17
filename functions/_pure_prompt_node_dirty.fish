@@ -13,7 +13,7 @@ function _pure_prompt_node_dirty
 
     # major version
     if test -z "$node_version_ok"
-        set --local node_version_major (echo "$node_version" | sed -E "s/([0-9]+)\.*[0-9]*\.*[0-9]*/\1/")
+        set --local node_version_major (echo "$node_version" | grep --color=never -o "[[:digit:]]\+" | head -n 1)
         if test "$node_version_major" = "$nvmrc_version"
             set node_version_ok "true"
         end
@@ -21,13 +21,7 @@ function _pure_prompt_node_dirty
 
     # current node version's codename from `nvm ls`
     if test -z "$node_version_ok"
-        set --local node_version_code (nvm ls | grep "$node_version" \
-            | sed "s/[0-9]//g" \
-            | sed "s/\.//g" \
-            | sed "s/[()]//g" \
-            | sed "s/ //g" \
-            | sed "s/\/current//g"
-        )
+        set --local node_version_code (nvm ls | grep "$node_version" | grep --color=never -o "[[:alpha:]]\+/[[:alpha:]]\+")
         if test "$node_version_code" = "$nvmrc_version"
             set node_version_ok "true"
         end
