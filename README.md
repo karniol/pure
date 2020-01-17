@@ -43,6 +43,7 @@ Fully **customizable** (colors, symbols and features):
 - Display _username_ and _hostname_ when in an `SSH` session ;
 - Display command _duration_ when longer than `5` seconds ;
 - Display `Python` _virtualenv_ when activated ;
+- Display `Node` _version_ when there is a `package.json` nearby ;
 - Display `VI` mode and custom symbol for non-insert mode 🏳️ ;
 - Show system time 🏳️ ;
 - Show number of running jobs 🏳️ ;
@@ -74,6 +75,7 @@ or changing the defaults in your `config.fish`, _e.g._:
 | **`pure_symbol_git_stash`**            | `≡`     | Repository git stash status.                         |
 | **`pure_symbol_git_unpulled_commits`** | `⇣`     | Branch is behind upstream (commits to pull).         |
 | **`pure_symbol_git_unpushed_commits`** | `⇡`     | Branch is ahead upstream (commits to push).          |
+| **`pure_symbol_node_dirty`**           | `*`     | Node version is not the same as in .nvmrc file       |
 | **`pure_symbol_prefix_root_prompt`**   | `#`     | Prefix prompt when logged in as `root`.              |
 | **`pure_symbol_prompt`**               | `❯`     | Prompt symbol.                                       |
 | **`pure_symbol_reverse_prompt`**       | `❮`     | VI non-insert mode symbol.                           |
@@ -88,6 +90,7 @@ or changing the defaults in your `config.fish`, _e.g._:
 | **`pure_begin_prompt_with_current_directory`** | `true`  | `true`: _`pwd` `git`, `SSH`, duration_.<br/>`false`: _`SSH` `pwd` `git`, duration_.             |
 | **`pure_check_for_new_release`**               | `false` | `true`: check repo for new release (on every shell start)                                       |
 | **`pure_enable_git`**                          | `true`  | Show info about Git repository.                                                                 |
+| **`pure_enable_node`**                         | `true`  | Show info about Node and nvm.                                                                   |
 | **`pure_enable_single_line_prompt`**           | `false` | `true`: Compact prompt as a single line                                                         |
 | **`pure_reverse_prompt_symbol_in_vimode`**     | `true`  | `true`: `❮` indicate a non-insert mode.<br/>`false`: indicate vi mode with `[I]`, `[N]`, `[V]`. |
 | **`pure_separate_prompt_on_error`**            | `false` | Show last command [exit code as a separate character][exit-code].                               |
