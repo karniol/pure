@@ -6,8 +6,10 @@ function _pure_prompt_nvm \
     end
 
     set --local is_git_repository (command git rev-parse --is-inside-work-tree 2>/dev/null)
+    set --local repo_root (command git rev-parse --show-toplevel 2>/dev/null)
     set --local has_node (which node)
-    if test -n "$is_git_repository" -a -n "$has_node"
+    set --local contains_package_file (test -e "$repo_root/package.json"; and echo 1)
+    if test -n "$is_git_repository" -a -n "$has_node" -a -n "$contains_package_file"
         set --local node_prefix "node.js"
         set --local node_color (_pure_set_color $pure_color_node)
         set --local node_prompt "$node_color$node_prefix"
