@@ -9,9 +9,11 @@ function _pure_prompt_first_line \
 
     set --local prompt_ssh (_pure_prompt_ssh)
     set --local prompt_git (_pure_prompt_git)
+    set --local prompt_nvm (_pure_prompt_nvm)
     set --local prompt_command_duration (_pure_prompt_command_duration)
     set --local prompt (_pure_print_prompt \
                             $prompt_ssh \
+                            $prompt_nvm \
                             $prompt_git \
                             $prompt_command_duration
                         )
@@ -22,6 +24,7 @@ function _pure_prompt_first_line \
     if set --query pure_begin_prompt_with_current_directory; and test $pure_begin_prompt_with_current_directory = true
         set prompt_components \
                 $current_folder \
+                $prompt_nvm \
                 $prompt_git \
                 $prompt_ssh \
                 $prompt_command_duration
@@ -29,6 +32,7 @@ function _pure_prompt_first_line \
         set prompt_components \
                 $prompt_ssh \
                 $current_folder \
+                $prompt_nvm \
                 $prompt_git \
                 $prompt_command_duration
     end

@@ -49,6 +49,12 @@ _pure_set_default pure_color_system_time pure_color_mute
 # Virtualenv for Python
 _pure_set_default pure_color_virtualenv pure_color_mute
 
+# fish-nvm
+_pure_set_default pure_enable_nvm true
+_pure_set_default pure_color_node green
+_pure_set_default pure_symbol_node_dirty "*"
+_pure_set_default pure_color_node_dirty green
+
 # Print current working directory at the beginning of prompt
 # true (default):   current directory, git, user@hostname (ssh-only), command duration
 # false:            user@hostname (ssh-only), current directory, git, command duration
