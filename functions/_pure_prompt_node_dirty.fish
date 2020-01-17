@@ -6,7 +6,7 @@ function _pure_prompt_node_dirty
     # node version in `.nvmrc`
     set --local repo_root (command git rev-parse --show-toplevel 2>/dev/null)
     set --local nvmrc_path "$repo_root/.nvmrc"
-    set --local nvmrc_version (test -e "$nvmrc_path"; and head -n 1 "$nvmrc_path")
+    set --local nvmrc_version (test -e "$nvmrc_path"; and head -n 1 "$nvmrc_path" | sed "s/^v//g")
 
     # version from `node -v`
     set --local node_version (node -v | head -n 1 | sed "s/^v//g")
