@@ -4,7 +4,7 @@ set --global pure_version 4.1.1 # For bug report and tag-after-merge workflow
 _pure_set_default pure_color_primary blue
 _pure_set_default pure_color_info cyan
 _pure_set_default pure_color_mute brblack
-_pure_set_default pure_color_success magenta
+_pure_set_default pure_color_success normal
 _pure_set_default pure_color_normal normal
 _pure_set_default pure_color_danger red
 _pure_set_default pure_color_light white
